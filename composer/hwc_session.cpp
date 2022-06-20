@@ -47,6 +47,8 @@
 #include "hwc_debugger.h"
 #include <processgroup/processgroup.h>
 
+#include <processgroup/processgroup.h>
+
 #define __CLASS__ "HWCSession"
 
 #define HWC_UEVENT_SWITCH_HDMI "change@/devices/virtual/switch/hdmi"
