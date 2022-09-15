@@ -732,6 +732,7 @@ DisplayError DisplayBase::SetDisplayState(DisplayState state, bool teardown,
       }
     }
 
+    fb_config_.fps = display_attributes_.fps;
     error = comp_manager_->ReconfigureDisplay(display_comp_ctx_, display_attributes_,
                                               hw_panel_info_, mixer_attributes_, fb_config_,
                                               &(default_clock_hz_));
@@ -1465,6 +1466,7 @@ DisplayError DisplayBase::ReconfigureDisplay() {
     return kErrorNone;
   }
 
+  fb_config_.fps = display_attributes_.fps;
   error = comp_manager_->ReconfigureDisplay(display_comp_ctx_, display_attributes, hw_panel_info,
                                             mixer_attributes, fb_config_,
                                             &(default_clock_hz_));
