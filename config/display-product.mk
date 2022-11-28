@@ -154,8 +154,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.disable_hw_recovery_dump=1
 endif
 
+ifeq ($(TARGET_BOARD_PLATFORM),kona) 
+# Disable power async mode
+PRODUCT_PROPERTY_OVERRIDES +=  vendor.display.enable_async_powermode=0
+else
 # Enable power async mode
 PRODUCT_PROPERTY_OVERRIDES +=  vendor.display.enable_async_powermode=1
+endif
 
 QMAA_ENABLED_HAL_MODULES += display
 ifeq ($(TARGET_USES_QMAA),true)
