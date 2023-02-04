@@ -66,25 +66,25 @@ PRODUCT_COPY_FILES += $(BOARD_DISPLAY_HAL)/config/qdcm_calib_data_bengal_default
 PRODUCT_COPY_FILES += $(BOARD_DISPLAY_HAL)/config/qdcm_calib_data_bengal_default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_td4330_v2_video_mode_dsi_truly_panel.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.demo.hdmirotationlock=false \
-    persist.sys.sf.color_saturation=1.0 \
-    persist.sys.sf.color_mode=9 \
-    debug.sf.hw=0 \
-    debug.egl.hw=0 \
-    debug.sf.latch_unsignaled=0 \
-    debug.sf.high_fps_late_app_phase_offset_ns=1000000 \
-    debug.mdpcomp.logs=0 \
-    vendor.gralloc.disable_ubwc=0 \
-    vendor.display.disable_scaler=0 \
-    vendor.display.disable_excl_rect=0 \
-    vendor.display.disable_excl_rect_partial_fb=1 \
+    persist.demo.hdmirotationlock?=false \
+    persist.sys.sf.color_saturation?=1.0 \
+    persist.sys.sf.color_mode?=9 \
+    debug.sf.hw?=0 \
+    debug.egl.hw?=0 \
+    debug.sf.latch_unsignaled?=0 \
+    debug.sf.high_fps_late_app_phase_offset_ns?=1000000 \
+    debug.mdpcomp.logs?=0 \
+    vendor.gralloc.disable_ubwc?=0 \
+    vendor.display.disable_scaler?=0 \
+    vendor.display.disable_excl_rect?=0 \
+    vendor.display.disable_excl_rect_partial_fb?=1 \
     vendor.display.comp_mask=0 \
-    vendor.display.enable_posted_start_dyn=1 \
-    vendor.display.enable_optimize_refresh=1 \
-    vendor.display.enable_camera_smooth=1 \
-    vendor.display.enable_allow_idle_fallback=1 \
-    vendor.display.disable_idle_time_video=1 \
-    vendor.display.disable_idle_time_hdr=1
+    vendor.display.enable_posted_start_dyn?=1 \
+    vendor.display.enable_optimize_refresh?=1 \
+    vendor.display.enable_camera_smooth?=1 \
+    vendor.display.enable_allow_idle_fallback?=1 \
+    vendor.display.disable_idle_time_video?=1 \
+    vendor.display.disable_idle_time_hdr?=1
 
 # Enable offline rotator for Bengal, Monaco, Khaje.
 ifneq ($(filter bengal monaco khaje, $(TARGET_BOARD_PLATFORM)),$(TARGET_BOARD_PLATFORM))
